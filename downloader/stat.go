@@ -5,7 +5,7 @@ import (
 	"sync"
 	"sort"
 	"time"
-	"github.com/piotrnar/gocoin/btc"
+	"github.com/vipwzw/gocoin/btc"
 )
 
 var (

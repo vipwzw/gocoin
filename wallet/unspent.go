@@ -7,7 +7,7 @@ import (
 	"bufio"
 	"strconv"
 	"strings"
-	"github.com/piotrnar/gocoin/btc"
+	"github.com/vipwzw/gocoin/btc"
 )
 
 // load the content of the "balance/" folder

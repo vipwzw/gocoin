@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"runtime"
 	"runtime/debug"
-	"github.com/piotrnar/gocoin/qdb"
+	"github.com/vipwzw/gocoin/qdb"
 )
 
 

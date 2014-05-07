@@ -11,8 +11,8 @@ import (
 	"archive/zip"
 	"encoding/xml"
 	"encoding/hex"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/others/utils"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/others/utils"
 )
 
 var (

@@ -8,8 +8,8 @@ import (
 	"sync"
 	"io/ioutil"
 	"encoding/binary"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/client/common"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/client/common"
 )
 
 var (

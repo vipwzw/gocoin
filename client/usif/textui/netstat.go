@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sort"
 	"time"
-	"github.com/piotrnar/gocoin/client/network"
-	"github.com/piotrnar/gocoin/client/common"
+	"github.com/vipwzw/gocoin/client/network"
+	"github.com/vipwzw/gocoin/client/common"
 )
 
 

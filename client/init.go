@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"time"
 	"encoding/hex"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/others/blockdb"
-	"github.com/piotrnar/gocoin/client/common"
-	"github.com/piotrnar/gocoin/client/wallet"
-	"github.com/piotrnar/gocoin/client/network"
-	"github.com/piotrnar/gocoin/client/usif/textui"
-	"github.com/piotrnar/gocoin/others/utils"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/others/blockdb"
+	"github.com/vipwzw/gocoin/client/common"
+	"github.com/vipwzw/gocoin/client/wallet"
+	"github.com/vipwzw/gocoin/client/network"
+	"github.com/vipwzw/gocoin/client/usif/textui"
+	"github.com/vipwzw/gocoin/others/utils"
 )
 
 
@@ -34,7 +34,7 @@ func host_init() {
 		network.AlertPubKey, _ = hex.DecodeString("04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a")
 		common.MaxPeersNeeded = 100
 	} else {
-		common.GenesisBlock = btc.NewUint256FromString("000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f")
+		common.GenesisBlock = btc.NewUint256FromString("00000b75d032c3049bd2626a7fddefbd3ad31ff5a8e272655b4b2219177a34c2")
 		common.Magic = [4]byte{0xF9,0xBE,0xB4,0xD9}
 		common.GocoinHomeDir += "btcnet"+string(os.PathSeparator)
 		network.AlertPubKey, _ = hex.DecodeString("04fc9702847840aaf195de8442ebecedf5b095cdbb9bc716bda9110971b28a49e0ead8564ff0db22209e0374782c093bb899692d524e9d6a6956e7c5ecbcd68284")

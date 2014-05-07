@@ -7,10 +7,10 @@ import (
 var bnProofOfWorkLimit *big.Int // it's var but used as a constant
 
 const (
-	nTargetTimespan = 14 * 24 * 60 * 60 // two weeks
-	nTargetSpacing = 10 * 60
+	nTargetTimespan = 1 * 24 * 60 * 60 // two weeks
+	nTargetSpacing = 60
 	nInterval = nTargetTimespan / nTargetSpacing
-	nProofOfWorkLimit = 0x1d00ffff
+	nProofOfWorkLimit = 0x1e0ffff0
 )
 
 
@@ -127,5 +127,5 @@ func GetCompact(b *big.Int) uint32 {
 }
 
 func init() {
-	bnProofOfWorkLimit, _ = new(big.Int).SetString("00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 16)
+	bnProofOfWorkLimit, _ = new(big.Int).SetString("00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 16)
 }

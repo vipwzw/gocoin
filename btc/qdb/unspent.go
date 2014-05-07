@@ -5,8 +5,8 @@ import (
 	"errors"
 	"encoding/hex"
 	"encoding/binary"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/qdb"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/qdb"
 )
 
 /*

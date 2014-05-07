@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"math/rand"
 	"sync/atomic"
-	"github.com/piotrnar/gocoin/client/common"
+	"github.com/vipwzw/gocoin/client/common"
 )
 
 

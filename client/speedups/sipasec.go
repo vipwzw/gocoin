@@ -12,8 +12,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/piotrnar/gocoin/others/cgo/sipasec"
-	"github.com/piotrnar/gocoin/btc"
+	"github.com/vipwzw/gocoin/others/cgo/sipasec"
+	"github.com/vipwzw/gocoin/btc"
 )
 
 func EC_Verify(k, s, h []byte) bool {

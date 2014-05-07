@@ -10,9 +10,9 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"path/filepath"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/client/common"
-	"github.com/piotrnar/gocoin/client/wallet"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/client/common"
+	"github.com/vipwzw/gocoin/client/wallet"
 )
 
 var webuimenu = [][2]string {

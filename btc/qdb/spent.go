@@ -3,7 +3,7 @@ package qdb
 import (
 	"io"
 	"encoding/binary"
-	"github.com/piotrnar/gocoin/btc"
+	"github.com/vipwzw/gocoin/btc"
 )
 
 

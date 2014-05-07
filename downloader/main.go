@@ -9,10 +9,10 @@ import (
 	"runtime"
 	"os/signal"
 	"runtime/debug"
-	"github.com/piotrnar/gocoin/btc"
-	//"github.com/piotrnar/gocoin/qdb"
-	"github.com/piotrnar/gocoin/btc/qdb"
-	"github.com/piotrnar/gocoin/others/utils"
+	"github.com/vipwzw/gocoin/btc"
+	//"github.com/vipwzw/gocoin/qdb"
+	"github.com/vipwzw/gocoin/btc/qdb"
+	"github.com/vipwzw/gocoin/others/utils"
 )
 
 

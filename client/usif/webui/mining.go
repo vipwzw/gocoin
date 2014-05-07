@@ -6,8 +6,8 @@ import (
 	"sort"
 	"strings"
 	"net/http"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/client/common"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/client/common"
 )
 
 type omv struct {

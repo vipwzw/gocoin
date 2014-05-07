@@ -7,7 +7,7 @@ import (
 	"flag"
 	"strings"
 	"io/ioutil"
-	"github.com/piotrnar/gocoin/btc"
+	"github.com/vipwzw/gocoin/btc"
 )
 
 

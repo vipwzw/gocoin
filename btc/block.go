@@ -84,7 +84,9 @@ func (bl *Block) BuildTxList() (e error) {
 	return
 }
 
-
 func GetBlockReward(height uint32) (uint64) {
-	return 50e8 >> (height/210000)
+    if height == 1 {
+        return 765546949e8
+	}
+	return 1e8
 }

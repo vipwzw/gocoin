@@ -5,7 +5,7 @@ import (
 	"sort"
 	"sync/atomic"
 	"crypto/rand"
-	"github.com/piotrnar/gocoin/client/common"
+	"github.com/vipwzw/gocoin/client/common"
 )
 
 

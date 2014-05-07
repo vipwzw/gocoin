@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"crypto/sha256"
-	"github.com/piotrnar/gocoin/secp256k1"
+	"github.com/vipwzw/gocoin/secp256k1"
 )
 
 

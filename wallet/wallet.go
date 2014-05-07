@@ -7,8 +7,8 @@ import (
 	"bufio"
 	"strings"
 	"encoding/hex"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/others/utils"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/others/utils"
 )
 
 var type2_secret []byte // used to type-2 wallets

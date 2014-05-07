@@ -6,8 +6,8 @@ import (
 	"sync"
 	"sync/atomic"
 	"encoding/hex"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/client/common"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/client/common"
 )
 
 

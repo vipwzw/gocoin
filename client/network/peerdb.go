@@ -10,9 +10,9 @@ import (
 	"errors"
 	"strings"
 	"encoding/binary"
-	"github.com/piotrnar/gocoin/qdb"
-	"github.com/piotrnar/gocoin/others/utils"
-	"github.com/piotrnar/gocoin/client/common"
+	"github.com/vipwzw/gocoin/qdb"
+	"github.com/vipwzw/gocoin/others/utils"
+	"github.com/vipwzw/gocoin/client/common"
 )
 
 const (
@@ -241,11 +241,11 @@ func InitPeers(dir string) {
 	} else {
 		go func() {
 			if !common.CFG.Testnet {
-				initSeeds([]string{"seed.bitcoin.sipa.be", "dnsseed.bluematt.me",
-					/*"dnsseed.bitcoin.dashjr.org",*/ "bitseed.xf2.org"}, 8333)
+				initSeeds([]string{"seed21.macoin.org", "seed22.macoin.org",
+					/*"dnsseed.bitcoin.dashjr.org",*/ "seed23.macoin.org"}, 10998)
 			} else {
-				initSeeds([]string{/*"bitcoin.petertodd.org",*/ "testnet-seed.bitcoin.petertodd.org",
-					/*"bluematt.me",*/ "testnet-seed.bluematt.me"}, 18333)
+				initSeeds([]string{/*"bitcoin.petertodd.org",*/ "seed1.macoin.org",
+					/*"bluematt.me",*/ "seed2.macoin.org"}, 18333)
 			}
 		}()
 	}

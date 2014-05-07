@@ -3,7 +3,7 @@ package btc
 import (
 	"errors"
 	"math/big"
-	"github.com/piotrnar/gocoin/secp256k1"
+	"github.com/vipwzw/gocoin/secp256k1"
 )
 
 

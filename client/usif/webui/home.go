@@ -7,11 +7,11 @@ import (
 	"runtime"
 	"net/http"
 	"encoding/json"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/client/usif"
-	"github.com/piotrnar/gocoin/client/common"
-	"github.com/piotrnar/gocoin/client/wallet"
-	"github.com/piotrnar/gocoin/client/network"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/client/usif"
+	"github.com/vipwzw/gocoin/client/common"
+	"github.com/vipwzw/gocoin/client/wallet"
+	"github.com/vipwzw/gocoin/client/network"
 )
 
 

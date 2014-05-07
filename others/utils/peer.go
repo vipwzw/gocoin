@@ -3,7 +3,7 @@ package utils
 import (
 	"hash/crc64"
 	"encoding/binary"
-	"github.com/piotrnar/gocoin/btc"
+	"github.com/vipwzw/gocoin/btc"
 )
 
 type OnePeer struct {

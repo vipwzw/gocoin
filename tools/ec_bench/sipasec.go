@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 	"encoding/hex"
-	"github.com/piotrnar/gocoin/others/cgo/sipasec"
+	"github.com/vipwzw/gocoin/others/cgo/sipasec"
 )
 
 var CNT int = 250*60

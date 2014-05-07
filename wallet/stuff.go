@@ -7,8 +7,8 @@ import (
 	"bytes"
 	"strings"
 	"io/ioutil"
-	"github.com/piotrnar/gocoin/btc"
-	"github.com/piotrnar/gocoin/others/utils"
+	"github.com/vipwzw/gocoin/btc"
+	"github.com/vipwzw/gocoin/others/utils"
 )
 
 // Get TxOut record, by the given TxPrevOut

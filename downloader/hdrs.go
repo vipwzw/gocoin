@@ -8,7 +8,7 @@ import (
 	"bytes"
 	"errors"
 	"encoding/binary"
-	"github.com/piotrnar/gocoin/btc"
+	"github.com/vipwzw/gocoin/btc"
 )
 
 var (
