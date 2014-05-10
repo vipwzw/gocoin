@@ -250,6 +250,7 @@ func ServerThread(iface string) {
 	http.HandleFunc("/txw4i.xml", xml_txw4i)
 	http.HandleFunc("/raw_tx", raw_tx)
 	http.HandleFunc("/balance.xml", xml_balance)
+	http.HandleFunc("/unspent", json_unspent)
 	http.HandleFunc("/raw_balance", raw_balance)
 	http.HandleFunc("/raw_net", raw_net)
 	http.HandleFunc("/balance.zip", dl_balance)
