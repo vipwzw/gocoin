@@ -11,7 +11,6 @@ import (
 	"io/ioutil"
 	"archive/zip"
 	"encoding/xml"
-	"encoding/hex"
 	"encoding/json"
 	"path/filepath"
 	"github.com/vipwzw/gocoin/btc"
@@ -70,7 +69,7 @@ func json_unspent(w http.ResponseWriter, r *http.Request) {
     var total uint64
     for i := 0; i < len(unspent); i++ {
         var un unspentInner
-        un.Txid = hex.EncodeToString(unspent[i].Hash[:])
+        un.Txid = btc.NewUint256(unspent[i].Hash[:]).String()
         un.Vout = unspent[i].Vout
         un.Addr = unspent[i].Enc58str
         un.Amount = float64(unspent[i].Value) / 1.0e8
