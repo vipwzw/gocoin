@@ -49,19 +49,25 @@ func json_unspent(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header()["Content-Type"] = []string{"text/json"}
-    addrs := r.FormValue("addr")
+    addrs  := r.FormValue("addr")
+    amount, err := btc.StringToSatoshis(r.FormValue("amount"))
+    if err != nil {
+        w.Write([]byte("Error:amount"))
+        return
+    }
     addrArray := strings.Split(addrs, ":")
     var search []*btc.BtcAddr
     for i := 0; i < len(addrArray); i++ {
         a, err := btc.NewAddrFromString(addrArray[i])
         if err != nil {
-            w.Write([]byte("Error"))
+            w.Write([]byte("Error:Addr"+addrArray[i]))
             return
         }
         search = append(search, a)
     }
     unspent := common.BlockChain.GetAllUnspent(search, true)
     var unspents []*unspentInner
+    var total uint64
     for i := 0; i < len(unspent); i++ {
         var un unspentInner
         un.Txid = hex.EncodeToString(unspent[i].Hash[:])
@@ -69,6 +75,14 @@ func json_unspent(w http.ResponseWriter, r *http.Request) {
         un.Addr = unspent[i].Enc58str
         un.Amount = float64(unspent[i].Value) / 1.0e8
         unspents = append(unspents, &un)
+        total += unspent[i].Value
+        if total >= amount {
+            break
+        }
+    }
+    if total < amount {
+        w.Write([]byte("Error:not enough money"))
+        return
     }
     b, err := json.Marshal(unspents)
     if err != nil {
