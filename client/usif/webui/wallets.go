@@ -76,11 +76,11 @@ func json_unspent(w http.ResponseWriter, r *http.Request) {
         un.Amount = float64(unspent[i].Value) / 1.0e8
         unspents = append(unspents, &un)
         total += unspent[i].Value
-        if total >= amount {
+        if amount > 0 && total >= amount {
             break
         }
     }
-    if total < amount {
+    if amount > 0 && total < amount {
         w.Write([]byte("Error:not enough money"))
         return
     }
