@@ -301,7 +301,7 @@ func main() {
 		go webui.ServerThread(common.CFG.WebUI.Interface)
 	}
 
-	for !usif.Exit_now {
+	for !usif.IsExit() {
 		common.CountSafe("MainThreadLoops")
 		for retryCachedBlocks {
 			retryCachedBlocks = retry_cached_blocks()
@@ -316,7 +316,7 @@ func main() {
 		select {
 			case s := <-killchan:
 				fmt.Println("Got signal:", s)
-				usif.Exit_now = true
+				usif.ExitNow()
 				continue
 
 			case newbl := <-network.NetBlocks:

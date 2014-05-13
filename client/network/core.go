@@ -359,6 +359,7 @@ func NetCloseAll() {
 		}
 	}
 	Mutex_net.Unlock()
+	println("wait for closed.")
 	for {
 		Mutex_net.Lock()
 		all_done := InConsActive == 0 && OutConsActive == 0

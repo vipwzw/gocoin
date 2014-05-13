@@ -241,8 +241,7 @@ func InitPeers(dir string) {
 	} else {
 		go func() {
 			if !common.CFG.Testnet {
-				initSeeds([]string{"seed21.macoin.org", "seed22.macoin.org",
-					/*"dnsseed.bitcoin.dashjr.org",*/ "seed23.macoin.org"}, 10998)
+				initSeeds([]string{"seed2.macoin.org", "seed3.macoin.org"}, 10999)
 			} else {
 				initSeeds([]string{/*"bitcoin.petertodd.org",*/ "seed1.macoin.org",
 					/*"bluematt.me",*/ "seed2.macoin.org"}, 18333)

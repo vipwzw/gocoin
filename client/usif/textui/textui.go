@@ -324,7 +324,7 @@ func dump_block(s string) {
 
 
 func ui_quit(par string) {
-	usif.Exit_now = true
+	usif.ExitNow()
 }
 
 
@@ -362,7 +362,7 @@ func qdb_stats(par string) {
 
 func defrag_blocks(par string) {
 	usif.DefragBlocksDB = true
-	usif.Exit_now = true
+	usif.ExitNow()
 }
 
 

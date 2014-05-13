@@ -20,7 +20,7 @@ const (
 	BLOCK_COMPRSD = 0x04
 	BLOCK_SNAPPED = 0x08
 
-	MaxCachedBlocks = 500
+	MaxCachedBlocks = 5000
 )
 
 /*
@@ -197,15 +197,22 @@ func (db *BlockDB) addToCache(h *Uint256, bl []byte) {
 		return
 	}
 	if len(db.cache) >= MaxCachedBlocks {
+        println("cache delete.")
 		var oldest_t time.Time
 		var oldest_k [Uint256IdxLen]byte
+        i := 0
 		for k, v := range db.cache {
 			if oldest_t.IsZero() || v.used.Before(oldest_t) {
 				oldest_t = v.used
 				oldest_k = k
 			}
+            //删除1/10的不常用的数据，这样就不用每次都扫描500次了，浪费了大量的性能
+            if i % 10 == 0 {
+                delete(db.cache, oldest_k)
+                oldest_t = time.Time{}
+            }
+            i++;
 		}
-		delete(db.cache, oldest_k)
 	}
 	db.cache[h.BIdx()] = &cacheRecord{used:time.Now(), data:bl}
 }
@@ -346,17 +353,18 @@ func (db *BlockDB) BlockGet(hash *Uint256) (bl []byte, trusted bool, e error) {
 
 	bl = make([]byte, rec.blen)
 
+    //这里频繁打开关闭文件会引起巨大的性能问题
+    //当然也要看操作系统怎么处理的，具体要看测试情况
 	// we will re-open the data file, to not spoil the writting pointer
 	f, e := os.Open(db.dirname+"blockchain.dat")
 	if e != nil {
 		return
 	}
-
+    defer f.Close()
 	_, e = f.Seek(int64(rec.fpos), os.SEEK_SET)
 	if e == nil {
 		_, e = f.Read(bl[:])
 	}
-	f.Close()
 
 	if rec.compressed {
 		if rec.snappied {
@@ -368,8 +376,9 @@ func (db *BlockDB) BlockGet(hash *Uint256) (bl []byte, trusted bool, e error) {
 		}
 	}
 
+    db.mutex.Lock()
 	db.addToCache(hash, bl)
-
+    db.mutex.Unlock()
 	return
 }
 

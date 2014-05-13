@@ -146,6 +146,11 @@ var (
 	next_clean_hammers time.Time
 )
 
+func IsListenTCP() bool {
+	common.LockCfg()
+	defer common.UnlockCfg()
+	return common.CFG.Net.ListenTCP
+}
 
 // TCP server
 func tcp_server() {
@@ -164,7 +169,7 @@ func tcp_server() {
 
 	//fmt.Println("TCP server started at", ad.String())
 
-	for common.CFG.Net.ListenTCP {
+	for IsListenTCP() {
 		common.CountSafe("NetServerLoops")
 		Mutex_net.Lock()
 		ica := InConsActive

@@ -22,12 +22,22 @@ type OneUiReq struct {
 
 var (
 	UiChannel chan *OneUiReq = make(chan *OneUiReq, 1)
-
+	mu sync.Mutex
 	Exit_now bool
 	DefragBlocksDB bool
 )
 
+func IsExit() bool {
+	mu.Lock()
+	defer mu.Unlock()
+	return Exit_now
+}
 
+func ExitNow() {
+	mu.Lock()
+	defer mu.Unlock()
+	Exit_now = true
+}
 func DecodeTx(tx *btc.Tx) (s string, missinginp bool, totinp, totout uint64, e error) {
 	s += fmt.Sprintln("Transaction details (for your information):")
 	s += fmt.Sprintln(len(tx.TxIn), "Input(s):")

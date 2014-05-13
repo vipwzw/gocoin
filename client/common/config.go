@@ -151,8 +151,10 @@ func init() {
 
 
 func Reset() {
+	LockBw()
 	UploadLimit = CFG.Net.MaxUpKBps << 10
 	DownloadLimit = CFG.Net.MaxDownKBps << 10
+	UnlockBw()
 	debug.SetGCPercent(CFG.Memory.GCPercTrshold)
 	MaxExpireTime = time.Duration(CFG.TXPool.TxExpireMaxHours) * time.Hour
 	ExpirePerKB = time.Duration(CFG.TXPool.TxExpireMinPerKB) * time.Minute
@@ -164,7 +166,7 @@ func Reset() {
 		if CFG.Testnet {
 			DefaultTcpPort = 18333
 		} else {
-			DefaultTcpPort = 8333
+			DefaultTcpPort = 10998
 		}
 	}
 

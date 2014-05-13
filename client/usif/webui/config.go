@@ -4,6 +4,7 @@ import (
 	"os"
 	"strconv"
 	"net/http"
+	"fmt"
 	"io/ioutil"
 	"encoding/json"
 	"runtime/debug"
@@ -50,7 +51,7 @@ func p_cfg(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if len(r.Form["shutdown"])>0 {
-			usif.Exit_now = true
+			usif.ExitNow()
 			w.Write([]byte("Your node should shut down soon"))
 			return
 		}
@@ -88,6 +89,7 @@ func p_cfg(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+		fmt.Println("reload config may cause data race ,not use in product.\n");
 	if len(r.Form["savecfg"])>0 {
 		dat, _ := json.Marshal(&common.CFG)
 		if dat != nil {
