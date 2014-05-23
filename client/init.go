@@ -35,7 +35,7 @@ func host_init() {
 		common.MaxPeersNeeded = 100
 	} else {
 		common.GenesisBlock = btc.NewUint256FromString("00000b75d032c3049bd2626a7fddefbd3ad31ff5a8e272655b4b2219177a34c2")
-		common.Magic = [4]byte{0xF9,0xBE,0xB4,0xD9}
+		common.Magic = [4]byte{0x04,0x26,0x07,0x27}
 		common.GocoinHomeDir += "btcnet"+string(os.PathSeparator)
 		network.AlertPubKey, _ = hex.DecodeString("04fc9702847840aaf195de8442ebecedf5b095cdbb9bc716bda9110971b28a49e0ead8564ff0db22209e0374782c093bb899692d524e9d6a6956e7c5ecbcd68284")
 		common.MaxPeersNeeded = 1000
