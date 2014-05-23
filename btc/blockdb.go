@@ -206,7 +206,7 @@ func (db *BlockDB) addToCache(h *Uint256, bl []byte) {
 				oldest_t = v.used
 				oldest_k = k
 			}
-            //删除1/10的不常用的数据，这样就不用每次都扫描500次了，浪费了大量的性能
+            //脡戮鲁媒1/10碌脛虏禄鲁拢脫脙碌脛脢媒戮脻拢卢脮芒脩霉戮脥虏禄脫脙脙驴麓脦露录脡篓脙猫500麓脦脕脣拢卢脌脣路脩脕脣麓贸脕驴碌脛脨脭脛脺
             if i % 10 == 0 {
                 delete(db.cache, oldest_k)
                 oldest_t = time.Time{}
@@ -353,8 +353,8 @@ func (db *BlockDB) BlockGet(hash *Uint256) (bl []byte, trusted bool, e error) {
 
 	bl = make([]byte, rec.blen)
 
-    //这里频繁打开关闭文件会引起巨大的性能问题
-    //当然也要看操作系统怎么处理的，具体要看测试情况
+    //脮芒脌茂脝碌路卤麓貌驴陋鹿脴卤脮脦脛录镁禄谩脪媒脝冒戮脼麓贸碌脛脨脭脛脺脦脢脤芒
+    //碌卤脠禄脪虏脪陋驴麓虏脵脳梅脧碌脥鲁脭玫脙麓麓娄脌铆碌脛拢卢戮脽脤氓脪陋驴麓虏芒脢脭脟茅驴枚
 	// we will re-open the data file, to not spoil the writting pointer
 	f, e := os.Open(db.dirname+"blockchain.dat")
 	if e != nil {
