@@ -13,12 +13,12 @@ import (
 func BitcoinHome() (res string) {
 	res = os.Getenv("APPDATA")
 	if res!="" {
-		res += "\\Bitcoin\\"
+		res += "\\Macoin2\\"
 		return
 	}
 	res = os.Getenv("HOME")
 	if res!="" {
-		res += "/.bitcoin/"
+		res += "/.macoin2/"
 	}
 	return
 }
