@@ -360,6 +360,7 @@ func NetCloseAll() {
 	}
 	Mutex_net.Unlock()
 	println("wait for closed.")
+	i := 20;
 	for {
 		Mutex_net.Lock()
 		all_done := InConsActive == 0 && OutConsActive == 0
@@ -367,7 +368,12 @@ func NetCloseAll() {
 		if all_done {
 			return
 		}
-		time.Sleep(1e7)
+		i--;
+		if i == 0 {
+		    println("max wait time got, some connection may not closed.")
+			return;
+		}
+		time.Sleep(1e8)
 	}
 }
 

@@ -28,16 +28,21 @@ var (
 )
 
 func IsExit() bool {
+	//fmt.Println("begin IsExit");
 	mu.Lock()
 	defer mu.Unlock()
+	//fmt.Println("end IsExit");
 	return Exit_now
 }
 
 func ExitNow() {
+	fmt.Println("begin ExitNow");
 	mu.Lock()
 	defer mu.Unlock()
+    fmt.Println("end ExitNow");
 	Exit_now = true
 }
+
 func DecodeTx(tx *btc.Tx) (s string, missinginp bool, totinp, totout uint64, e error) {
 	s += fmt.Sprintln("Transaction details (for your information):")
 	s += fmt.Sprintln(len(tx.TxIn), "Input(s):")
